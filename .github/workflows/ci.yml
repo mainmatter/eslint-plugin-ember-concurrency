@@ -9,6 +9,9 @@ on:
   schedule:
     - cron:  '0 3 * * *' # daily, at 3am
 
+env:
+  FORCE_COLOR: 1
+
 jobs:
   lint:
     name: Linting
