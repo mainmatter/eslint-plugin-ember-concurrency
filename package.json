@@ -2,7 +2,7 @@
   "name": "eslint-plugin-ember-concurrency",
   "version": "0.1.0",
   "description": "ESLint plugin for ember-concurrency users",
-  "repository": "https://github.com/github:simplabs/eslint-plugin-ember-concurrency",
+  "repository": "https://github.com/simplabs/eslint-plugin-ember-concurrency",
   "license": "MIT",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
   "main": "index.js",
