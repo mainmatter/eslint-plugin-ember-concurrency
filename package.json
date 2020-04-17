@@ -5,5 +5,11 @@
   "repository": "https://github.com/github:simplabs/eslint-plugin-ember-concurrency",
   "license": "MIT",
   "author": "Tobias Bieniek <tobias.bieniek@gmail.com>",
-  "main": "index.js"
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "peerDependencies": {
+    "eslint": "^6.8.0"
+  }
 }
