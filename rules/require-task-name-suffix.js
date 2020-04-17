@@ -16,6 +16,24 @@ module.exports = {
           });
         }
       },
+
+      ClassProperty(node) {
+        if (node.static || node.computed) return;
+
+        let { key, value, decorators } = node;
+        if (key.type !== 'Identifier' || key.name.endsWith('Task')) return;
+        if (value !== null) return;
+        if (!decorators) return;
+
+        for (let decorator of node.decorators) {
+          if (hasTaskCallExpression(decorator.expression)) {
+            context.report({
+              node: node.key,
+              message: 'Task names should end with `Task`',
+            });
+          }
+        }
+      },
     };
   },
 };
