@@ -15,7 +15,7 @@ module.exports = {
         if (effectiveParent.type !== 'ExpressionStatement') return;
 
         context.report({
-          node: node,
+          node: property,
           message: 'Unhandled promise error from `perform()` call',
         });
       },
