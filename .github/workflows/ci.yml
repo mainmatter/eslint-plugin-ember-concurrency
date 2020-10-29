@@ -26,13 +26,13 @@ jobs:
       - run: yarn install
       - run: yarn lint
 
-  test:
-    name: Tests
-    runs-on: ubuntu-latest
-
+  test-node:
     strategy:
       matrix:
         node-version: [10.x, 12.x]
+
+    name: Tests (Node.js ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
