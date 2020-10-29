@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.1 (2020-10-29)
+
+#### :rocket: Enhancement
+* [#26](https://github.com/simplabs/eslint-plugin-ember-concurrency/pull/26) no-perform-without-catch: Adjust report node ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 ## v0.2.0 (2020-10-29)
 
 #### :rocket: Enhancement

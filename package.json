@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-ember-concurrency",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "ESLint plugin for ember-concurrency users",
   "repository": "https://github.com/simplabs/eslint-plugin-ember-concurrency",
   "license": "MIT",
