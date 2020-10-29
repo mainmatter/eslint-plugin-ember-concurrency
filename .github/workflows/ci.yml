@@ -21,19 +21,18 @@ jobs:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 14.x
 
       - run: yarn install
       - run: yarn lint
 
-  test:
-    name: Tests
-    runs-on: ${{ matrix.os }}
-
+  test-node:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        node-version: [10.x, 12.x]
+        node-version: [10.x, 12.x, 14.x]
+
+    name: Tests (Node.js ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
@@ -43,3 +42,21 @@ jobs:
 
       - run: yarn install
       - run: yarn test --coverage
+
+  test-eslint:
+    strategy:
+      matrix:
+        eslint-version: [7.0.0, 6.0.0]
+
+    name: Tests (ESLint ${{ matrix.eslint-version }})
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - run: yarn install
+      - run: yarn add --dev eslint@${{ matrix.eslint-version }}
+      - run: yarn test
