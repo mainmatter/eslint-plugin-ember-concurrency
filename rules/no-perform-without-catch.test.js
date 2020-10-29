@@ -29,13 +29,13 @@ ruleTester.run('no-perform-without-catch', rule, {
     {
       code: `function foo() { this.submitTask.perform(); }`,
       errors: [
-        { message: 'Unhandled promise error from `perform()` call', column: 18, endColumn: 43 },
+        { message: 'Unhandled promise error from `perform()` call', column: 34, endColumn: 41 },
       ],
     },
     {
       code: `function foo() { this.submitTask.perform().then().then(); }`,
       errors: [
-        { message: 'Unhandled promise error from `perform()` call', column: 18, endColumn: 43 },
+        { message: 'Unhandled promise error from `perform()` call', column: 34, endColumn: 41 },
       ],
     },
   ],
