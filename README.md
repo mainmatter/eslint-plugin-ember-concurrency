@@ -25,6 +25,7 @@ module.exports = {
   plugins: ['ember-concurrency'],
 
   rules: {
+    'ember-concurrency/no-perform-without-catch': 'error',
     'ember-concurrency/require-task-name-suffix': 'error',
   },
 };
@@ -33,6 +34,9 @@ module.exports = {
 
 Rules
 ------------------------------------------------------------------------------
+
+- [no-perform-without-catch](./rules/no-perform-without-catch.md) – Ensures
+  all `.perform()` calls have some kind of error handling
 
 - [require-task-name-suffix](./rules/require-task-name-suffix.md) – Ensures
   consistent task property names
