@@ -35,6 +35,9 @@ module.exports = {
 Rules
 ------------------------------------------------------------------------------
 
+- [no-native-promise-helpers](./rules/no-native-promise-helpers) – Prevents
+  usage of `Promise.all/race()` in tasks
+
 - [no-perform-without-catch](./rules/no-perform-without-catch.md) – Ensures
   all `.perform()` calls have some kind of error handling
 
