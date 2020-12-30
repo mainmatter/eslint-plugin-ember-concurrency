@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.1 (2020-12-30)
+
+#### :bug: Bug Fix
+* [#54](https://github.com/simplabs/eslint-plugin-ember-concurrency/pull/54) Correctly export `no-native-promise-helpers` rule ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
 ## v0.3.0 (2020-12-30)
 
 #### :rocket: Enhancement
