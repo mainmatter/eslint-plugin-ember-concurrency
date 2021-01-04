@@ -35,7 +35,7 @@ module.exports = {
 Rules
 ------------------------------------------------------------------------------
 
-- [no-native-promise-helpers](./rules/no-native-promise-helpers) – Prevents
+- [no-native-promise-helpers](./rules/no-native-promise-helpers.md) – Prevents
   usage of `Promise.all/race()` in tasks
 
 - [no-perform-without-catch](./rules/no-perform-without-catch.md) – Ensures
