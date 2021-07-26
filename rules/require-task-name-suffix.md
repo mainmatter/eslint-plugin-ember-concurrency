@@ -11,10 +11,18 @@ This rule **forbids** the following:
 
 ```js
 export default Component.extend({
-  submit: task(function*() { 
+  submit: task(function*() {
     //...
   }),
 })
+```
+
+```js
+export default class extends Component {
+  @task *submit() {
+    //...
+  };
+}
 ```
 
 This rule **allows** the following:
@@ -25,4 +33,12 @@ export default Component.extend({
     //...
   }),
 })
+```
+
+```js
+export default class extends Component {
+  @task *submitTask() {
+    //...
+  };
+}
 ```
