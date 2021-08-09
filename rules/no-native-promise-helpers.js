@@ -2,6 +2,8 @@
 
 const HELPERS = ['all', 'race', 'allSettled'];
 
+const { hasTaskDecorator } = require('../utils/utils');
+
 module.exports = {
   create(context) {
     let parentTask = null;
@@ -21,6 +23,24 @@ module.exports = {
       },
 
       'FunctionExpression:exit'(node) {
+        if (node === parentTask) {
+          parentTask = null;
+        }
+      },
+
+      MethodDefinition(node) {
+        if (parentTask) return;
+        let { value, decorators } = node;
+        if (!decorators) return;
+        if (!value) return;
+        if (!value.generator) return;
+
+        if (hasTaskDecorator(node)) {
+          parentTask = node;
+        }
+      },
+
+      'MethodDefinition:exit'(node) {
         if (node === parentTask) {
           parentTask = null;
         }
