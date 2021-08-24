@@ -1,5 +1,7 @@
 'use strict';
 
+const { hasTaskDecorator } = require('../utils/utils');
+
 module.exports = {
   create(context) {
     return {
@@ -16,7 +18,20 @@ module.exports = {
           });
         }
       },
+      MethodDefinition(node) {
+        let { key, value, decorators } = node;
+        if (key.type !== 'Identifier' || key.name.endsWith('Task')) return;
+        if (!decorators) return;
+        if (!value) return;
+        if (!value.generator) return;
 
+        if (hasTaskDecorator(node)) {
+          context.report({
+            node: node.key,
+            message: 'Task names should end with `Task`',
+          });
+        }
+      },
       ClassProperty(node) {
         if (node.static || node.computed) return;
 

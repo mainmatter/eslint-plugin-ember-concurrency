@@ -25,6 +25,11 @@ let INVALID = [
 
 let VALID_BABEL = [
   `export default class extends Component { @task something; }`,
+  `export default class extends Component { @task *submitTask() { }; }`,
+  `export default class extends Component { @restartableTask *submitTask() { }; }`,
+  `export default class extends Component { @dropTask *submitTask() { }; }`,
+  `export default class extends Component { @keepLatestTask *submitTask() { }; }`,
+  `export default class extends Component { @enqueueTask *submitTask() { }; }`,
   `export default class extends Component { @task(function*() {}) submitTask; }`,
   `export default class extends Component { @(task(function*() {})) submitTask; }`,
   `export default class extends Component { @(task(function*() {}).drop()) submitTask; }`,
@@ -46,6 +51,26 @@ let INVALID_BABEL = [
   {
     code: `export default class extends Component { @(task(function*() {}).drop()) submit; }`,
     errors: [{ message: 'Task names should end with `Task`', column: 73 }],
+  },
+  {
+    code: `export default class extends Component { @task *submit() { } }`,
+    errors: [{ message: 'Task names should end with `Task`', column: 49 }],
+  },
+  {
+    code: `export default class extends Component { @restartableTask *submit() { } }`,
+    errors: [{ message: 'Task names should end with `Task`', column: 60 }],
+  },
+  {
+    code: `export default class extends Component { @dropTask *submit() { } }`,
+    errors: [{ message: 'Task names should end with `Task`', column: 53 }],
+  },
+  {
+    code: `export default class extends Component { @keepLatestTask *submit() { } }`,
+    errors: [{ message: 'Task names should end with `Task`', column: 59 }],
+  },
+  {
+    code: `export default class extends Component { @enqueueTask *submit() { } }`,
+    errors: [{ message: 'Task names should end with `Task`', column: 56 }],
   },
 ];
 
