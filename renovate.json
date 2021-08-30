@@ -2,18 +2,27 @@
   "extends": [
     "config:js-lib",
     ":automergePatch",
+    ":automergeLinters",
+    ":automergeTesters",
     ":dependencyDashboard",
     ":maintainLockFilesWeekly",
     ":semanticCommitsDisabled"
   ],
-
-  "postUpdateOptions": ["yarnDedupeFewest"],
-
   "packageRules": [
     {
       "matchCurrentVersion": ">= 1.0.0",
-      "updateTypes": ["minor"],
+      "updateTypes": [
+        "minor"
+      ],
       "automerge": true
+    },
+    {
+      "packageNames": [
+        "ember-cli",
+        "ember-data",
+        "ember-source"
+      ],
+      "separateMinorPatch": true
     }
   ]
 }
