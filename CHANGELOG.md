@@ -1,5 +1,15 @@
 # Changelog
 
+
+## v0.4.0 (2021-08-31)
+
+#### :memo: Documentation
+* [#57](https://github.com/simplabs/eslint-plugin-ember-concurrency/pull/57) Fix "no-native-promise-helpers" link ([@bertdeblock](https://github.com/bertdeblock))
+
+#### Committers: 2
+- Bert De Block ([@bertdeblock](https://github.com/bertdeblock))
+- Michael Kerr ([@Mikek2252](https://github.com/Mikek2252))
+
 ## v0.3.1 (2020-12-30)
 
 #### :bug: Bug Fix
