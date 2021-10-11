@@ -72,6 +72,10 @@ let INVALID_BABEL = [
     code: `export default class extends Component { @enqueueTask *submit() { } }`,
     errors: [{ message: 'Task names should end with `Task`', column: 56 }],
   },
+  {
+    code: `export default class extends Component { @task({ maxConcurrency: 3, }) *submit() { } }`,
+    errors: [{ message: 'Task names should end with `Task`', column: 73 }],
+  },
 ];
 
 let ruleTester = new RuleTester({

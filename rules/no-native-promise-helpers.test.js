@@ -330,5 +330,26 @@ export default class extends Component {
         },
       ],
     },
+    {
+      code: `
+        export default class extends Component {
+          @task({ maxConcurrency: 3, }) *submitTask() {
+            yield Promise.all([
+              this.saveTask.perform(),
+              this.loadingSpinnerTask.perform(),
+            ]);
+          }
+        }
+      `,
+      errors: [
+        {
+          message: "Use `import { all } from 'ember-concurrency';` instead of `Promise.all()`",
+          line: 4,
+          column: 19,
+          endLine: 7,
+          endColumn: 15,
+        },
+      ],
+    },
   ],
 });
