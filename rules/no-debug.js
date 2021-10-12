@@ -1,6 +1,6 @@
 'use strict';
 
-const { hasTaskDecorator } = require('../utils/utils');
+const { hasTaskDecorator, hasTaskCallExpression } = require('../utils/utils');
 
 module.exports = {
   create(context) {
@@ -46,31 +46,6 @@ module.exports = {
     };
   },
 };
-
-function hasTaskCallExpression(node) {
-  return Boolean(findTaskCallExpression(node));
-}
-
-function findTaskCallExpression(node) {
-  if (isTaskCallExpression(node)) {
-    return node;
-  }
-
-  if (node.type === 'CallExpression' && node.callee.type === 'MemberExpression') {
-    return findTaskCallExpression(node.callee.object);
-  }
-}
-
-function isTaskCallExpression(node) {
-  return (
-    node.type === 'CallExpression' &&
-    node.callee.type === 'Identifier' &&
-    node.callee.name === 'task' &&
-    node.arguments[0] &&
-    node.arguments[0].type === 'FunctionExpression' &&
-    node.arguments[0].generator
-  );
-}
 
 function hasDebugCallee(node) {
   let { callee } = node;
