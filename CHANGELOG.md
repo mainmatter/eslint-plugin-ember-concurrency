@@ -1,6 +1,24 @@
 # Changelog
 
 
+
+## v0.5.0 (2021-10-14)
+
+#### :rocket: Enhancement
+* [#151](https://github.com/simplabs/eslint-plugin-ember-concurrency/pull/151) Adding the `no-debug` rule ([@Mikek2252](https://github.com/Mikek2252))
+
+#### :bug: Bug Fix
+* [#150](https://github.com/simplabs/eslint-plugin-ember-concurrency/pull/150) Update `hasTaskDecorator` helper to include CallExpression as a valid expression Type ([@Mikek2252](https://github.com/Mikek2252))
+
+#### :memo: Documentation
+* [#153](https://github.com/simplabs/eslint-plugin-ember-concurrency/pull/153) README: Include `no-debug` rule ([@Mikek2252](https://github.com/Mikek2252))
+
+#### :house: Internal
+* [#152](https://github.com/simplabs/eslint-plugin-ember-concurrency/pull/152) Move `hasTaskCallExpression` to utils ([@Mikek2252](https://github.com/Mikek2252))
+
+#### Committers: 1
+- Michael Kerr ([@Mikek2252](https://github.com/Mikek2252))
+
 ## v0.4.0 (2021-08-31)
 
 #### :memo: Documentation
