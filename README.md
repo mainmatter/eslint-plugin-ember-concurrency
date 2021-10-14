@@ -44,6 +44,8 @@ Rules
 - [require-task-name-suffix](./rules/require-task-name-suffix.md) – Ensures
   consistent task property names
 
+- [no-debug](./rules/no-debug.md) - Ensures task debuggers are not shipped to production
+
 
 License
 ------------------------------------------------------------------------------
