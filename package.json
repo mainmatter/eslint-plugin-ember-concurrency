@@ -19,7 +19,7 @@
     "jest": "27.5.1",
     "prettier": "2.7.1",
     "release-it": "14.14.3",
-    "release-it-lerna-changelog": "3.1.0"
+    "release-it-lerna-changelog": "4.0.1"
   },
   "peerDependencies": {
     "eslint": "6.* || 7.*"
