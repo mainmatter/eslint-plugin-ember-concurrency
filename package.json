@@ -17,7 +17,7 @@
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-prettier": "4.0.0",
     "jest": "27.5.1",
-    "prettier": "2.8.7",
+    "prettier": "2.8.8",
     "release-it": "14.14.3",
     "release-it-lerna-changelog": "3.1.0"
   },
